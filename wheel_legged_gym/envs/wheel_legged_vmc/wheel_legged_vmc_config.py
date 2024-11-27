@@ -36,7 +36,7 @@ from wheel_legged_gym.envs.wheel_legged.wheel_legged_config import (
 
 class WheelLeggedVMCCfg(WheelLeggedCfg):
     class env(WheelLeggedCfg.env):
-        num_envs=8192
+        num_envs=16384
         num_privileged_obs = (
             WheelLeggedCfg.env.num_observations + 7 * 11 + 3 + 6 * 7 + 3 + 3
         )
