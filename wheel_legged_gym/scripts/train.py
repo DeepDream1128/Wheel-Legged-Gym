@@ -45,7 +45,7 @@ def train(args):
     )
     task_registry.save_cfgs(name=args.task)
     ppo_runner.learn(
-        num_learning_iterations=train_cfg.runner.max_iterations,
+        num_learning_iterations=500,
         init_at_random_ep_len=True,
     )
 

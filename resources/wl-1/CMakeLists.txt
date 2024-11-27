@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 
-project(wl-4)
+project(wl)
 
 find_package(catkin REQUIRED)
 

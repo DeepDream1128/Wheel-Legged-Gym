@@ -34,7 +34,7 @@ import os
 import isaacgym
 from isaacgym.torch_utils import *
 from wheel_legged_gym.envs import *
-from wheel_legged_gym.utils import get_args, export_policy_as_jit, task_registry, Logger
+from wheel_legged_gym.utils import get_args, export_policy_as_jit, export_policy_as_onnx, task_registry, Logger
 
 import numpy as np
 import torch
@@ -73,7 +73,8 @@ def play(args):
         env=env, name=args.task, args=args, train_cfg=train_cfg
     )
     policy = ppo_runner.get_inference_policy(device=env.device)
-
+    
+    
     # export policy as a jit module (used to run it from C++)
     if EXPORT_POLICY:
         path = os.path.join(
@@ -84,6 +85,8 @@ def play(args):
             "policies",
         )
         export_policy_as_jit(ppo_runner.alg.actor_critic, path)
+        export_policy_as_onnx(
+        ppo_runner.alg.actor_critic, path=path, filename="policy.onnx")
         print("Exported policy as jit script to: ", path)
 
     logger = Logger(env.dt)

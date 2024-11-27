@@ -26,7 +26,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/base_link.STL" />
+          filename="package://wl-4/meshes/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -40,7 +40,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/base_link.STL" />
+          filename="package://wl-4/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -66,7 +66,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/lf0_Link.STL" />
+          filename="package://wl-4/meshes/lf0_Link.STL" />
       </geometry>
       <material
         name="">
@@ -80,13 +80,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/lf0_Link.STL" />
+          filename="package://wl-4/meshes/lf0_Link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="lf0_Joint"
-    type="revolute">
+    type="continuous">
     <origin
       xyz="-0.048289 -0.23 0.045"
       rpy="-1.1943 0 -3.1416" />
@@ -97,7 +97,7 @@
     <axis
       xyz="1 0 0" />
     <dynamics damping="0" friction="0"/>
-    <limit lower="-1.3479" upper="-0.35" effort="30" velocity="1000" />
+    <limit lower="-0.2182" upper="1.3479" effort="30" velocity="1000" />
   </joint>
   <link
     name="lf1_Link">
@@ -121,7 +121,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/lf1_Link.STL" />
+          filename="package://wl-4/meshes/lf1_Link.STL" />
       </geometry>
       <material
         name="">
@@ -135,13 +135,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/lf1_Link.STL" />
+          filename="package://wl-4/meshes/lf1_Link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="lf1_Joint"
-    type="revolute">
+    type="continuous">
     <origin
       xyz="0 0.029484 0.14707"
       rpy="0.26553 0 3.1416" />
@@ -152,7 +152,7 @@
     <axis
       xyz="1 0 0" />
     <dynamics damping="0" friction="0"/>
-    <limit lower="-2.0" upper="0" effort="30" velocity="1000" />
+    <limit lower="-1" upper="1.25" effort="30" velocity="1000" />
   </joint>
   <link
     name="l_wheel_Link">
@@ -176,7 +176,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/l_wheel_Link.STL" />
+          filename="package://wl-4/meshes/l_wheel_Link.STL" />
       </geometry>
       <material
         name="">
@@ -190,13 +190,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/l_wheel_Link.STL" />
+          filename="package://wl-4/meshes/l_wheel_Link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="l_wheel_Joint"
-    type="revolute">
+    type="continuous">
     <origin
       xyz="-0.046511 -0.12948 -0.20207"
       rpy="-0.10149 0 -3.1416" />
@@ -231,7 +231,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/rf0_Link.STL" />
+          filename="package://wl-4/meshes/rf0_Link.STL" />
       </geometry>
       <material
         name="">
@@ -245,13 +245,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/rf0_Link.STL" />
+          filename="package://wl-4/meshes/rf0_Link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="rf0_Joint"
-    type="revolute">
+    type="continuous">
     <origin
       xyz="0.29829 -0.23 0.045"
       rpy="1.59 0 0" />
@@ -262,7 +262,7 @@
     <axis
       xyz="1 0 0" />
     <dynamics damping="0" friction="0"/>
-    <limit lower="0.35" upper="1.3479" effort="30" velocity="1000" />
+    <limit lower="-0.2182" upper="1.3479" effort="30" velocity="1000" />
   </joint>
   <link
     name="rf1_Link">
@@ -286,7 +286,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/rf1_Link.STL" />
+          filename="package://wl-4/meshes/rf1_Link.STL" />
       </geometry>
       <material
         name="">
@@ -300,13 +300,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/rf1_Link.STL" />
+          filename="package://wl-4/meshes/rf1_Link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="rf1_Joint"
-    type="revolute">
+    type="continuous">
     <origin
       xyz="0 0.029484 0.14707"
       rpy="1.2699 0 -3.1416" />
@@ -317,7 +317,7 @@
     <axis
       xyz="1 0 0" />
     <dynamics damping="0" friction="0"/>
-    <limit lower="0" upper="2.0" effort="30" velocity="1000" />
+    <limit lower="-1" upper="1.25" effort="30" velocity="1000" />
   </joint>
   <link
     name="r_wheel_Link">
@@ -341,7 +341,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/r_wheel_Link.STL" />
+          filename="package://wl-4/meshes/r_wheel_Link.STL" />
       </geometry>
       <material
         name="">
@@ -355,13 +355,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/r_wheel_Link.STL" />
+          filename="package://wl-4/meshes/r_wheel_Link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="r_wheel_Joint"
-    type="revolute">
+    type="continuous">
     <origin
       xyz="-0.053011 -0.12948 -0.20207"
       rpy="1.5708 0.32015 -1.5708" />
