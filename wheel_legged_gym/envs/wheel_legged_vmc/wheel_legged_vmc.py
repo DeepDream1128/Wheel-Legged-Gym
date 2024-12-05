@@ -283,15 +283,13 @@ class LeggedRobotVMC(LeggedRobot):
             self.extras["time_outs"] = self.time_out_buf
 
     def compute_proprioception_observations(self):
-        # note that observation noise need to modified accordingly !!!
+    # note that observation noise need to modified accordingly !!!
+    # Create observation buffer
         obs_buf = torch.cat(
             (
-                # self.base_lin_vel * self.obs_scales.lin_vel,
                 self.base_ang_vel * self.obs_scales.ang_vel,
                 self.projected_gravity,
                 self.commands[:, :3] * self.commands_scale,
-                # (self.dof_pos - self.default_dof_pos) * self.obs_scales.dof_pos,
-                # self.dof_vel * self.obs_scales.dof_vel,
                 self.theta0 * self.obs_scales.dof_pos,
                 self.theta0_dot * self.obs_scales.dof_vel,
                 self.L0 * self.obs_scales.l0,
@@ -302,7 +300,22 @@ class LeggedRobotVMC(LeggedRobot):
             ),
             dim=-1,
         )
+        
+        # Output the shape of each variable
+        # print(f"base_ang_vel: {self.base_ang_vel.shape}")
+        # print(f"projected_gravity: {self.projected_gravity.shape}")
+        # print(f"commands[:, :3]: {self.commands[:, :3].shape}")
+        # print(f"theta0: {self.theta0.shape}")
+        # print(f"theta0_dot: {self.theta0_dot.shape}")
+        # print(f"L0: {self.L0.shape}")
+        # print(f"L0_dot: {self.L0_dot.shape}")
+        # print(f"dof_pos[:, [2, 5]]: {self.dof_pos[:, [2, 5]].shape}")
+        # print(f"dof_vel[:, [2, 5]]: {self.dof_vel[:, [2, 5]].shape}")
+        # print(f"actions: {self.actions.shape}")
+        # print(f"obs_buf: {obs_buf.shape}")
+        
         return obs_buf
+
 
     def compute_observations(self):
         """Computes observations"""

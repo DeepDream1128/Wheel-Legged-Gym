@@ -3,22 +3,22 @@
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
-  name="wl-4">
+  name="wl-with-battery">
   <link
     name="base_link">
     <inertial>
       <origin
-        xyz="0.12925 -0.17426 0.022868"
+        xyz="-0.023179 -0.0031695 0.031334"
         rpy="0 0 0" />
       <mass
-        value="2.2729" />
+        value="2.7026" />
       <inertia
-        ixx="0.008209"
-        ixy="-7.9354E-09"
-        ixz="4.8809E-08"
-        iyy="0.0037619"
-        iyz="8.3137E-06"
-        izz="0.0099796" />
+        ixx="0.0042681"
+        ixy="8.7831E-08"
+        ixz="8.2307E-06"
+        iyy="0.0085582"
+        iyz="-3.3884E-07"
+        izz="0.01026" />
     </inertial>
     <visual>
       <origin
@@ -48,17 +48,17 @@
     name="lf0_Link">
     <inertial>
       <origin
-        xyz="0.027346 0.016396 0.082293"
+        xyz="0.08391 0.00010215 0.021335"
         rpy="0 0 0" />
       <mass
         value="0.19709" />
       <inertia
-        ixx="0.00043178"
-        ixy="-3.3591E-11"
-        ixz="3.5904E-16"
-        iyy="0.00036101"
-        iyz="-5.7511E-05"
-        izz="7.6715E-05" />
+        ixx="6.5531E-05"
+        ixy="-1.7349E-06"
+        ixz="-6.6006E-12"
+        iyy="0.00037219"
+        iyz="3.2939E-11"
+        izz="0.00043178" />
     </inertial>
     <visual>
       <origin
@@ -88,32 +88,35 @@
     name="lf0_Joint"
     type="revolute">
     <origin
-      xyz="-0.048289 -0.23 0.045"
-      rpy="-1.1943 0 -3.1416" />
+      xyz="-0.055 0.1793 0.054"
+      rpy="1.5708 0 3.1416" />
     <parent
       link="base_link" />
     <child
       link="lf0_Link" />
     <axis
-      xyz="1 0 0" />
-    <dynamics damping="0" friction="0"/>
-    <limit lower="-1.3479" upper="-0.35" effort="30" velocity="1000" />
+      xyz="0 0 -1" />
+    <limit
+      lower="0.44"
+      upper="1.3962"
+      effort="50"
+      velocity="1000" />
   </joint>
   <link
     name="lf1_Link">
     <inertial>
       <origin
-        xyz="-0.041518 -0.065148 -0.1016"
+        xyz="-0.11414 -0.039239 0.0025069"
         rpy="0 0 0" />
       <mass
         value="0.26751" />
       <inertia
-        ixx="0.001326"
-        ixy="2.4795E-11"
-        ixz="-2.2666E-11"
-        iyy="0.00089536"
-        iyz="-0.00050202"
-        izz="0.00043549" />
+        ixx="0.0002303"
+        ixy="-0.00033994"
+        ixz="1.6151E-11"
+        iyy="0.0011005"
+        iyz="-2.9457E-11"
+        izz="0.001326" />
     </inertial>
     <visual>
       <origin
@@ -143,32 +146,35 @@
     name="lf1_Joint"
     type="revolute">
     <origin
-      xyz="0 0.029484 0.14707"
-      rpy="0.26553 0 3.1416" />
+      xyz="0.15 0 0.033"
+      rpy="0 0 0" />
     <parent
       link="lf0_Link" />
     <child
       link="lf1_Link" />
     <axis
-      xyz="1 0 0" />
-    <dynamics damping="0" friction="0"/>
-    <limit lower="-2.0" upper="0" effort="30" velocity="1000" />
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.7925"
+      upper="-0.44"
+      effort="50"
+      velocity="1000" />
   </joint>
   <link
     name="l_wheel_Link">
     <inertial>
       <origin
-        xyz="0.035519 6.9089E-05 2.4823E-05"
+        xyz="2.5473E-05 6.8852E-05 -0.029019"
         rpy="0 0 0" />
       <mass
         value="1.2715" />
       <inertia
-        ixx="0.0068222"
-        ixy="7.6507E-09"
-        ixz="3.3124E-07"
-        iyy="0.0035457"
-        iyz="-1.2837E-06"
-        izz="0.0035434" />
+        ixx="0.0035434"
+        ixy="-1.2614E-06"
+        ixz="-3.313E-07"
+        iyy="0.0035458"
+        iyz="-4.5271E-09"
+        izz="0.0068222" />
     </inertial>
     <visual>
       <origin
@@ -198,32 +204,35 @@
     name="l_wheel_Joint"
     type="revolute">
     <origin
-      xyz="-0.046511 -0.12948 -0.20207"
-      rpy="-0.10149 0 -3.1416" />
+      xyz="-0.22699 -0.077958 0.014"
+      rpy="-3.1416 0 0" />
     <parent
       link="lf1_Link" />
     <child
       link="l_wheel_Link" />
     <axis
-      xyz="1 0 0" />
-    <dynamics damping="0" friction="0"/>
-    <limit effort="5" velocity="1000" />
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="60"
+      velocity="1000" />
   </joint>
   <link
     name="rf0_Link">
     <inertial>
       <origin
-        xyz="0.027346 0.016396 0.082293"
+        xyz="-0.08391 0.00010215 0.021335"
         rpy="0 0 0" />
       <mass
         value="0.19709" />
       <inertia
-        ixx="0.00043178"
-        ixy="-3.3591E-11"
-        ixz="3.6175E-16"
-        iyy="0.00036101"
-        iyz="-5.7511E-05"
-        izz="7.6715E-05" />
+        ixx="-6.5531E-05"
+        ixy="1.7349E-06"
+        ixz="6.6006E-12"
+        iyy="0.00037219"
+        iyz="3.2939E-11"
+        izz="0.00043178" />
     </inertial>
     <visual>
       <origin
@@ -236,7 +245,7 @@
       <material
         name="">
         <color
-          rgba="0.75294 0.75294 0.75294 1" />
+          rgba="1 1 1 1" />
       </material>
     </visual>
     <collision>
@@ -253,32 +262,35 @@
     name="rf0_Joint"
     type="revolute">
     <origin
-      xyz="0.29829 -0.23 0.045"
-      rpy="1.59 0 0" />
+      xyz="-0.055 -0.1793 0.054"
+      rpy="1.5708 0 0" />
     <parent
       link="base_link" />
     <child
       link="rf0_Link" />
     <axis
-      xyz="1 0 0" />
-    <dynamics damping="0" friction="0"/>
-    <limit lower="0.35" upper="1.3479" effort="30" velocity="1000" />
+      xyz="0 0 1" />
+    <limit
+      lower="0.44"
+      upper="1.3962"
+      effort="50"
+      velocity="1000" />
   </joint>
   <link
     name="rf1_Link">
     <inertial>
       <origin
-        xyz="-0.041518 -0.065148 -0.1016"
+        xyz="0.11416 -0.039171 0.0020069"
         rpy="0 0 0" />
       <mass
         value="0.26751" />
       <inertia
-        ixx="0.001326"
-        ixy="2.4791E-11"
-        ixz="-2.2667E-11"
-        iyy="0.00089536"
-        iyz="-0.00050202"
-        izz="0.00043549" />
+        ixx="0.00022925"
+        ixy="0.00033859"
+        ixz="5.3268E-12"
+        iyy="0.0011016"
+        iyz="3.3144E-11"
+        izz="0.001326" />
     </inertial>
     <visual>
       <origin
@@ -308,31 +320,34 @@
     name="rf1_Joint"
     type="revolute">
     <origin
-      xyz="0 0.029484 0.14707"
-      rpy="1.2699 0 -3.1416" />
+      xyz="-0.15 0 0.0335"
+      rpy="0 0 0" />
     <parent
       link="rf0_Link" />
     <child
       link="rf1_Link" />
     <axis
-      xyz="1 0 0" />
-    <dynamics damping="0" friction="0"/>
-    <limit lower="0" upper="2.0" effort="30" velocity="1000" />
+      xyz="0 0 -1" />
+    <limit
+      lower="0.44"
+      upper="2.7925"
+      effort="50"
+      velocity="1000" />
   </joint>
   <link
     name="r_wheel_Link">
     <inertial>
       <origin
-        xyz="-5.9192E-05 4.3426E-05 0.029019"
+        xyz="4.5238E-05 -5.7818E-05 0.029019"
         rpy="0 0 0" />
       <mass
         value="1.2715" />
       <inertia
         ixx="0.0035429"
-        ixy="-6.0418E-07"
-        ixz="-2.7897E-07"
-        iyy="0.0035462"
-        iyz="-1.7875E-07"
+        ixy="3.3314E-07"
+        ixz="3.1693E-07"
+        iyy="0.0035463"
+        iyz="9.6619E-08"
         izz="0.0068222" />
     </inertial>
     <visual>
@@ -363,15 +378,18 @@
     name="r_wheel_Joint"
     type="revolute">
     <origin
-      xyz="-0.053011 -0.12948 -0.20207"
-      rpy="1.5708 0.32015 -1.5708" />
+      xyz="0.22699 -0.077958 0.0135"
+      rpy="0 0 3.1416" />
     <parent
       link="rf1_Link" />
     <child
       link="r_wheel_Link" />
     <axis
       xyz="0 0 -1" />
-    <dynamics damping="0" friction="0"/>
-    <limit effort="5" velocity="1000" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="5"
+      velocity="1000" />
   </joint>
 </robot>

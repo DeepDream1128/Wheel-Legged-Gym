@@ -57,9 +57,9 @@ class WheelLeggedCfg(LeggedRobotCfg):
     class asset(LeggedRobotCfg.asset):
         file = "{WHEEL_LEGGED_GYM_ROOT_DIR}/resources/robots/wl/urdf/wl.urdf"
         name = "WheelLegged"
-        offset = 0.054
+        offset = 0.055
         l1 = 0.15
-        l2 = 0.25
+        l2 = 0.24
         penalize_contacts_on = ["lf", "rf", "base"]
         terminate_after_contacts_on = ["base"]
         self_collisions = 1  # 1 to disable, 0 to enable...bitwise filter

@@ -36,7 +36,7 @@ from wheel_legged_gym.envs.wheel_legged.wheel_legged_config import (
 
 class WheelLeggedVMCCfg(WheelLeggedCfg):
     class env(WheelLeggedCfg.env):
-        num_envs=16384
+        num_envs=4096
         num_privileged_obs = (
             WheelLeggedCfg.env.num_observations + 7 * 11 + 3 + 6 * 7 + 3 + 3
         )
@@ -47,7 +47,7 @@ class WheelLeggedVMCCfg(WheelLeggedCfg):
         action_scale_vel = 10.0
 
         l0_offset = 0.175
-        feedforward_force = 40.0  # [N]
+        feedforward_force = 20.0  # [N]
 
         kp_theta = 50.0  # [N*m/rad]
         kd_theta = 3.0  # [N*m*s/rad]
@@ -79,3 +79,4 @@ class WheelLeggedVMCCfgPPO(WheelLeggedCfgPPO):
     class runner(WheelLeggedCfgPPO.runner):
         # logging
         experiment_name = "wheel_legged_vmc"
+        max_iterations = 1000

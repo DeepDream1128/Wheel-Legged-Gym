@@ -84,7 +84,7 @@
         <axis xyz="0 0 1" />
         <dynamics damping="0" friction="0"/>
         <limit lower="-1.0" upper="1.25" effort="30" velocity="1000" />
-    </joint>
+    </joint>                            
     <link name="l_wheel_Link">
         <inertial>
             <origin xyz="-0.00004507 -0.00038447 0.02376028" rpy="0 0 0" />

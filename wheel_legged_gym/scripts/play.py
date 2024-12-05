@@ -111,7 +111,7 @@ def play(args):
             actions, latent = policy(obs, obs_history)
         else:
             actions = policy(obs.detach())
-
+        # print("latent:", latent)
         env.commands[:, 0] = 2.5
         env.commands[:, 2] = 0.18  # + 0.07 * np.sin(i * 0.01)
         env.commands[:, 3] = 0
